@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<!-- 指定由spring负责action对象的创建 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" /> 
+	<!-- 所有匹配*.action的请求都由struts2处理 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 是否启用开发模式,生产环境设为false -->
+	<constant name="struts.devMode" value="false" />
+	<!-- struts配置文件改动后，是否重新加载,生产环境设为false -->
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<!-- 设置浏览器是否缓存静态内容 ,生产环境设为true -->
+	<constant name="struts.serve.static.browserCache" value="true" />
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 每次HTTP请求系统都重新加载资源文件，有助于开发,生产环境设为false -->
+	<constant name="struts.i18n.reload" value="false" />
+	<!-- 文件上传最大值,10G -->
+	<constant name="struts.multipart.maxSize" value="10485760000" />
+	<!-- 让struts2支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- Action名称中是否还是用斜线 -->
+	<constant name="struts.enable.SlashesInActionNames" value="false" />
+	<!-- 允许标签中使用表达式语法 -->
+	<constant name="struts.tag.altSyntax" value="true" />
+	<!-- 对于WebLogic,Orion,OC4J此属性应该设置成true -->
+	<constant name="struts.dispatcher.parametersWorkaround" value="false" />
+	<!-- 设置视图资源的根路径 -->
+	<constant name="struts.convention.result.path" value="/"></constant>
+	<!-- 设置文件上传的目录 -->
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<!-- 去掉标签的css -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+	<package name="adminBasePackage" extends="struts-default" >
+	<interceptors>
+	<!-- 字符集拦截器 -->
+			<interceptor name="encodingInterceptor"
+				class="com.project.interceptor.EncodingInterceptor" />
+			<interceptor-stack name="encodingStack">
+				<interceptor-ref name="encodingInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+	<!-- session拦截器 -->
+			<interceptor name="sessionInterceptor"
+				class="com.project.interceptor.SessionInterceptor" />
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="encodingStack"></interceptor-ref>
+				<interceptor-ref name="sessionInterceptor">
+					<!-- doNotNeedSessionAndSecurity_ 开头的和doNotNeedSession_ 开头的方法不拦截 -->
+					<param name="excludeMethods">doNotNeedSession_*,doNotNeedSessionAndSecurity_*</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			</interceptors>
+			<global-results>
+			<!-- 没有session -->
+			<result name="noSession">/page/error/noSession.jsp</result>
+		</global-results>
+	<action name="LoginAction" class="com.project.login.action.LoginAction" >
+	</action> 
+	<action name="UserAction" class="com.project.user.action.UserAction" >
+	</action> 
+	<action name="RoleAction"   class="com.project.role.action.RoleAction" >
+	</action>
+	</package>
+<!-- 	<package name="adminBasePackage" extends="struts-default" >
+	</package> -->
+</struts>

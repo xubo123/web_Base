@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.10</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>authority</short-name>
+	<uri>/authority</uri>
+	<tag>
+    	<name>authority</name>
+    	<tag-class>com.project.tag.AuthorityTag</tag-class>
+    	<body-content>JSP</body-content>
+    	<attribute>
+        	<description>授权码</description>
+            <name>authorizationCode</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    	<attribute>
+        	<description>当前用户所拥有角色 </description>
+            <name>role</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+    	</attribute>
+    </tag>
+</taglib>

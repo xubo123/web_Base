@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.project.user.dao.UserMapper">
+<resultMap type="com.project.user.entity.User" id="userResultMap">
+		<id column="id" property="userId" />
+		<result column="account" property="userAccount" />
+		<result column="user_name" property="userName" />
+		<result column="passwd" property="password" />
+		<result column="telNum" property="telNum" />
+		<association property="role" column="roleId"
+			javaType="com.project.role.entity.Role">
+			<id column="role_id" property="roleId" />
+			<result column="role_name" property="roleName" />
+			<result column="system" property="systemAdmin" />
+		</association>
+	</resultMap>
+	<select id="getUserbyAccount" parameterType="String" resultMap="userResultMap">
+		select u.*,r.*  from user u 
+		left join role r on u.role = r.role_id
+		where account = #{userAccount}
+	</select>
+	<select id="getUserbyUserId" parameterType="long" resultMap="userResultMap">
+		select u.*,r.* from user u 
+		left join role r on u.role = r.role_id
+		where id= #{userId}
+	</select>
+	<update id="updatePassword" parameterType="com.project.user.entity.User">
+		update user set
+		passwd=#{password}
+		where account=#{username}
+	</update>
+	<select id="countUser" parameterType="map" resultType="long">
+		select count(id) from user
+		<where>
+			<if test="userAccount!=null and userAccount!=''">
+				and account like concat('%',#{userAccount},'%')
+			</if>
+		</where>
+	</select>
+	<insert id="save" parameterType="com.project.user.entity.User" 
+	useGeneratedKeys="true" keyProperty="userId">
+	     insert into
+		user(user_name,account,passwd,role,telnum)
+		values(#{userName},#{userAccount},#{password},#{roleId},#{telNum})
+	</insert>
+	<select id="selectUserList" parameterType="map" resultMap="userResultMap">
+		select u.*,r.*  from user u 
+		left join role r on u.role=r.role_id
+		<where>
+			<if test="userAccount!=null and userAccount!=''">
+				and account like concat('%',#{userAccount},'%')
+			</if>
+		</where>
+		limit #{start},#{rows}
+	</select>
+	<delete id="delete" parameterType="long">
+	    delete  from user where id = #{userId}
+	</delete>
+	<update id="update" parameterType="com.project.user.entity.User">
+	    update user set passwd=#{password},user_name = #{userName}, role=#{roleId},telnum=#{telNum} where id = #{userId}
+	</update>
+</mapper>

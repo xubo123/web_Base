@@ -1,0 +1,277 @@
+.iconImg {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	top: 4px;
+	border: none;
+}
+
+.ext-icon-role {
+	background: url('../images/icons/rolegrant.png') no-repeat;
+}
+
+.ext-icon-homePage {
+	background: url('../images/icons/homePage.png') no-repeat;
+}
+
+.ext-icon-charity {
+	background: url('../images/icons/charity.png') no-repeat;
+}
+
+.ext-icon-newsCenter {
+	background: url('../images/icons/newsCenter.png') no-repeat;
+}
+
+.ext-icon-password {
+	background: url('../images/icons/password.png') no-repeat;
+}
+
+.ext-icon-save {
+	background: url('../images/icons/save.png') no-repeat;
+}
+
+.ext-icon-freeze {
+	background: url('../images/icons/freeze.png') no-repeat;
+}
+
+.ext-icon-thaw {
+	background: url('../images/icons/thaw.png') no-repeat;
+}
+
+.ext-icon-micro {
+	background: url('../images/icons/micro.png') no-repeat;
+}
+
+.ext-icon-share {
+	background: url('../images/icons/share.png') no-repeat;
+}
+
+.ext-icon-activity {
+	background: url('../images/icons/activity.png') no-repeat;
+}
+
+.ext-icon-activitynews {
+	background: url('../images/icons/activitynews.png') no-repeat;
+}
+
+.ext-icon-news {
+	background: url('../images/icons/news.png') no-repeat;
+}
+
+.ext-icon-groups {
+	background: url('../images/icons/group.png') no-repeat;
+}
+
+.ext-icon-backmenu {
+	background: url('../images/icons/backmenu.png') no-repeat;
+}
+
+.ext-icon-area {
+	background: url('../images/icons/area.png') no-repeat;
+}
+
+.ext-icon-department {
+	background: url('../images/icons/department.png') no-repeat;
+}
+
+.ext-icon-order {
+	background: url('../images/icons/order.png') no-repeat;
+}
+
+.ext-icon-orderList {
+	background: url('../images/icons/orderList.png') no-repeat;
+}
+
+.ext-icon-moneys {
+	background: url('../images/icons/money.png') no-repeat;
+}
+
+.ext-icon-recyle {
+	background: url('../images/icons/recyle.png') no-repeat;
+}
+
+.ext-icon-huifu {
+	background: url('../images/icons/huifu.png') no-repeat;
+}
+
+.ext-icon-agent {
+	background: url('../images/icons/agent.png') no-repeat;
+}
+
+.ext-icon-agentList {
+	background: url('../images/icons/agentList.png') no-repeat;
+}
+
+.ext-icon-customer {
+	background: url('../images/icons/customer.png') no-repeat;
+}
+
+.ext-icon-customerList {
+	background: url('../images/icons/customerList.png') no-repeat;
+}
+
+.ext-icon-sendorder {
+	background: url('../images/icons/sendorder.png') no-repeat;
+}
+
+.ext-icon-book {
+	background: url('../images/ext_icons/book.png') no-repeat;
+}
+
+.ext-icon-cog {
+	background: url('../images/ext_icons/cog.png') no-repeat;
+}
+
+.ext-icon-database {
+	background: url('../images/ext_icons/database.png') no-repeat;
+}
+
+.ext-icon-disconnect {
+	background: url('../images/ext_icons/disconnect.png') no-repeat;
+}
+
+.ext-icon-door_out {
+	background: url('../images/ext_icons/door_out.png') no-repeat;
+}
+
+.ext-icon-house {
+	background: url('../images/ext_icons/house.png') no-repeat;
+}
+
+.ext-icon-house_go {
+	background: url('../images/ext_icons/house_go.png') no-repeat;
+}
+
+.ext-icon-rainbow {
+	background: url('../images/ext_icons/rainbow.png') no-repeat;
+}
+
+.ext-icon-application {
+	background: url('../images/ext_icons/application/application.png')
+		no-repeat;
+}
+
+.ext-icon-arrow_down {
+	background: url('../images/ext_icons/arrow/arrow_down.png') no-repeat;
+}
+
+.ext-icon-arrow_left {
+	background: url('../images/ext_icons/arrow/arrow_left.png') no-repeat;
+}
+
+.ext-icon-arrow_right {
+	background: url('../images/ext_icons/arrow/arrow_right.png') no-repeat;
+}
+
+.ext-icon-arrow_refresh {
+	background: url('../images/ext_icons/arrow/arrow_refresh.png') no-repeat;
+}
+
+.ext-icon-arrow_up {
+	background: url('../images/ext_icons/arrow/arrow_up.png') no-repeat;
+}
+
+.ext-icon-cross {
+	background: url('../images/ext_icons/arrow/cross.png') no-repeat;
+}
+
+.ext-icon-monitor {
+	background: url('../images/ext_icons/monitor/monitor.png') no-repeat;
+}
+
+.ext-icon-note {
+	background: url('../images/icons/view.png') no-repeat;
+}
+
+.ext-icon-note_add {
+	background: url('../images/icons/add.png') no-repeat;
+}
+
+.ext-icon-note_delete {
+	background: url('../images/icons/delete.png') no-repeat;
+}
+
+.ext-icon-note_edit {
+	background: url('../images/icons/edit.png') no-repeat;
+}
+
+.ext-icon-user {
+	background: url('../images/ext_icons/user/user.png') no-repeat;
+}
+
+.ext-icon-zoom {
+	background: url('../images/icons/search.png') no-repeat;
+}
+.ext-icon-key {
+	background: url('../images/icons/authgrant.png') no-repeat;
+}
+
+.ext-icon-money_book {
+	background: url('../images/money_book.png') no-repeat;
+}
+
+.ext-icon-money_book_list {
+	background: url('../images/money_book_list.png') no-repeat;
+}
+
+.ext-icon-ordercheck {
+	background: url('../images/ordercheck.png') no-repeat;
+}
+
+.ext-icon-registercode {
+	background: url('../images/registercode.png') no-repeat;
+}
+
+.ext-icon-win_record {
+	background: url('../images/win_record.png') no-repeat;
+}
+
+.ext-icon-agent_role {
+	background: url('../images/agent_role.png') no-repeat;
+}
+
+.ext-icon-import_customer {
+	background: url('../images/import_customer.png') no-repeat;
+}
+
+.ext-icon-export_customer {
+	background: url('../images/export_customer.png') no-repeat;
+}
+
+.ext-icon-onekey {
+	background: url('../images/onekey.png') no-repeat;
+}
+
+.ext-icon-import_order {
+	background: url('../images/import_order.png') no-repeat;
+}
+
+.ext-icon-prize_setting {
+	background: url('../images/prize_setting.png') no-repeat;
+}
+
+.ext-icon-confirm_send {
+	background: url('../images/confirm_send.png') no-repeat;
+}
+
+.ext-icon-yes {
+	background: url('../images/yes.png') no-repeat;
+}
+
+.ext-icon-no {
+	background: url('../images/no.png') no-repeat;
+}
+
+.ext-icon-choose_role {
+	background: url('../images/choose_role.png') no-repeat;
+}
+
+.ext-icon-commission {
+	background: url('../images/commission.png') no-repeat;
+}
+
+.ext-icon-sale {
+	background: url('../images/sale.png') no-repeat;
+}

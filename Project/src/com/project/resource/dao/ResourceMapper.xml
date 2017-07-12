@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.project.resource.dao.ResourceMapper">
+<select id="selectAll" resultType="com.project.resource.entity.Resource">
+    select r.* from resource r
+</select>
+<select id="getMenubyRoleId" parameterType="long" resultType="com.project.resource.entity.Resource">
+    select r.* from resource r left join resource_role rr on rr.resource_id = r.id where rr.role_id = #{roleId}
+</select>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.project.role.dao.RoleMapper">
+	<resultMap type="com.project.role.entity.Role" id="roleResultMap">
+		<id column="role_id" property="roleId" />
+		<result column="role_name" property="roleName" />
+		<result column="system" property="systemAdmin" />
+		<collection property="list" ofType="com.project.resource.entity.Resource">
+			<id column="id" property="id" />
+			<result column="name" property="name" />
+			<result column="url" property="url" />
+			<result column="pid" property="pid" />
+			<result column="icon" property="iconCls" />
+			<result column="type" property="type" />
+			<result column="seq" property="seq" />
+			<result column="flag" property="flag" />
+		</collection>
+	</resultMap>
+	<select id="getAllRole" resultMap="roleResultMap">
+		select * from role
+	</select>
+	<select id="countRole" parameterType="map" resultType="long">
+		select count(role_id) from role
+		<where>
+			<if test="roleName!=null and roleName!=''">
+				and role_name = #{roleName}
+			</if>
+		</where>
+	</select>
+	<select id="selectRoleList" parameterType="map" resultMap="roleResultMap">
+		select r.* from role r
+		limit #{start},#{rows}
+	</select>
+	<insert id="save" parameterType="com.project.role.entity.Role"
+		useGeneratedKeys="true" keyProperty="roleId">
+		insert into
+		role(role_name,system)
+		values(#{roleName},#{systemAdmin})
+	</insert>
+	<select id="getRoleByRoleId" parameterType="long" resultMap="roleResultMap">
+		select r.* from role r
+		where role_id=#{roleId}
+	</select>
+<update id="update" parameterType="com.project.role.entity.Role">
+	    update role set role_name = #{roleName} where role_id = #{roleId}
+	</update>
+	<delete id="delete" parameterType="long">
+	    delete  from role where role_id = #{roleId}
+	</delete>
+</mapper>
